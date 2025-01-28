@@ -35,4 +35,56 @@ export class AddingContactPage extends BasePage {
         this.btnLogout = page.locator('#logout');
 
     }
+
+    async enterFirstName(name: string): Promise<void> {
+        await this.inputFirstName.fill(name);
+    }
+
+    async enterLastName(name: string): Promise<void> {
+        await this.inputLastName.fill(name);
+    }
+
+    async enterBirthDay(date: string): Promise<void> {
+        await this.inputBirthDate.fill(date);
+    }
+
+    async enterEmail(email: string): Promise<void> {
+        await this.inputEmail.fill(email);
+    }
+
+    async enterPhoneNumber(phoneNumber: string): Promise<void> {
+        await this.inputPhoneNumber.fill(phoneNumber);
+    }
+
+    async enterStreetAddress1(address: string): Promise<void> {
+        await this.inputStreetAddress1.fill(address);
+    }
+
+    async enterStreetAddress2(address: string): Promise<void> {
+        await this.inputStreetAddress2.fill(address);
+    }
+
+    async enterCity(city: string): Promise<void> {
+        await this.inputCity.fill(city);
+    }
+
+    async enterStateOfProvince(stateOrProvince: string): Promise<void> {
+        await this.inputStateOrProvince.fill(stateOrProvince);
+    }
+
+    async enterPostalCode(code: string): Promise<void> {
+        await this.inputPostalCode.fill(code);
+    }
+
+    async enterCountry(country: string): Promise<void> {
+        await this.inputCountry.fill(country);
+    }
+
+    async submitContact(): Promise<void> {
+        await this.btnSubmit.click();
+    }
+
+    async cancel(): Promise<void> {
+        await this.btnCancel.click();
+    }
 }

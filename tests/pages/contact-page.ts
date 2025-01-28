@@ -9,7 +9,7 @@ export class ContactPage extends BasePage {
         this.btnAddingNewContact = page.locator('#add-contact');
     }
 
-    async addingnewContact(): Promise<void> {
+    async addingNewContact(): Promise<void> {
         await this.btnAddingNewContact.click();
     }
 }
