@@ -1,4 +1,4 @@
-import {Locator, Page} from "@playwright/test";
+import {expect, Locator, Page} from "@playwright/test";
 
 export class HomePage {
     readonly page: Page;
@@ -39,4 +39,5 @@ export class HomePage {
     async signUp(): Promise<void> {
         await this.btnSignUp.click();
     }
+
 }

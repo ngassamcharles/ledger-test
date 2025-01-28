@@ -5,11 +5,13 @@ Feature: Manage Contacts
 
   Background:
     Given I am logged into the contact list app
+      | email                       | password |
+      | testforleagder001@gmail.com | password |
 
   Scenario: Create a new contact
-    When I create a new contact with valid data
-      | firstName | lastName | email | password |
-      |           |          |       |          |
+    When I create a new contact with valid datas
+      | firstName | lastName | birthDate | email | phone | streetAdress1 | streetAddress2 | city | state | postalCode | country |
+      |           |          |           |       |       |               |                |      |       |            |         |
     Then New contact should appear in the contact list
 
   Scenario: Edit an existing contact

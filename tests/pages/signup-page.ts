@@ -33,7 +33,7 @@ export class SignupPage {
     }
 
     private async enterEmail(email: string): Promise<void> {
-        await this.inputLastName.fill(email);
+        await this.inputEmail.fill(email);
     }
 
     private async enterPassword(password: string): Promise<void> {

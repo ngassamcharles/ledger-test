@@ -6,14 +6,14 @@ import {defineBddConfig} from "playwright-bdd";
  * https://github.com/motdotla/dotenv
  */
 const testDir = defineBddConfig({
-    features: 'tests/features/**/*.feature',
-    steps: ['tests/steps/**/*-spec.ts', 'tests/fixtures/*.ts'],
+    features: 'tests/features/*.feature',
+    steps: ['tests/steps/*-spec.ts', 'tests/fixtures/*.ts'],
 });
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-    testDir: './tests',
+    testDir,
     /* Run tests in files in parallel */
     fullyParallel: false,
     /* Fail the build on CI if you accidentally left test.only in the source code. */

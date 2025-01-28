@@ -36,47 +36,72 @@ export class AddingContactPage extends BasePage {
 
     }
 
-    async enterFirstName(name: string): Promise<void> {
+    async fillAddingNewContactForm(firstName: string,
+                                   lastName: string,
+                                   birthDate: string,
+                                   email: string,
+                                   phone: string,
+                                   streetAddress1: string,
+                                   streetAddress2: string,
+                                   city: string,
+                                   state: string,
+                                   postalCode: string,
+                                   country: string): Promise<void> {
+        await this.enterFirstName(firstName);
+        await this.enterLastName(lastName);
+        await this.enterBirthDate(birthDate);
+        await this.enterEmail(email);
+        await this.enterPhoneNumber(phone);
+        await this.enterStreetAddress1(streetAddress1);
+        await this.enterStreetAddress2(streetAddress2);
+        await this.enterCity(city);
+        await this.enterStateOfProvince(state);
+        await this.enterPostalCode(postalCode);
+        await this.enterCountry(country);
+
+    }
+
+    private async enterFirstName(name: string): Promise<void> {
         await this.inputFirstName.fill(name);
     }
 
-    async enterLastName(name: string): Promise<void> {
+    private async enterLastName(name: string): Promise<void> {
         await this.inputLastName.fill(name);
     }
 
-    async enterBirthDay(date: string): Promise<void> {
+    private async enterBirthDate(date: string): Promise<void> {
         await this.inputBirthDate.fill(date);
     }
 
-    async enterEmail(email: string): Promise<void> {
+    private async enterEmail(email: string): Promise<void> {
         await this.inputEmail.fill(email);
     }
 
-    async enterPhoneNumber(phoneNumber: string): Promise<void> {
+    private async enterPhoneNumber(phoneNumber: string): Promise<void> {
         await this.inputPhoneNumber.fill(phoneNumber);
     }
 
-    async enterStreetAddress1(address: string): Promise<void> {
+    private async enterStreetAddress1(address: string): Promise<void> {
         await this.inputStreetAddress1.fill(address);
     }
 
-    async enterStreetAddress2(address: string): Promise<void> {
+    private async enterStreetAddress2(address: string): Promise<void> {
         await this.inputStreetAddress2.fill(address);
     }
 
-    async enterCity(city: string): Promise<void> {
+    private async enterCity(city: string): Promise<void> {
         await this.inputCity.fill(city);
     }
 
-    async enterStateOfProvince(stateOrProvince: string): Promise<void> {
+    private async enterStateOfProvince(stateOrProvince: string): Promise<void> {
         await this.inputStateOrProvince.fill(stateOrProvince);
     }
 
-    async enterPostalCode(code: string): Promise<void> {
+    private async enterPostalCode(code: string): Promise<void> {
         await this.inputPostalCode.fill(code);
     }
 
-    async enterCountry(country: string): Promise<void> {
+    private async enterCountry(country: string): Promise<void> {
         await this.inputCountry.fill(country);
     }
 
