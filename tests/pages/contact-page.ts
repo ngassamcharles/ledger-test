@@ -1,13 +1,15 @@
-import { Locator, Page } from "@playwright/test";
+import {Locator, Page} from "@playwright/test";
+import {BasePage} from "./basePage";
 
-export class ContactPage {
-    readonly page: Page;
+export class ContactPage extends BasePage {
     readonly btnAddingNewContact: Locator;
-    readonly btnLogout: Locator;
 
     constructor(page: Page) {
-        this.page = page;
+        super(page);
         this.btnAddingNewContact = page.locator('#add-contact');
-        this.btnLogout = page.locator('#logout');
+    }
+
+    async addingnewContact(): Promise<void> {
+        await this.btnAddingNewContact.click();
     }
 }

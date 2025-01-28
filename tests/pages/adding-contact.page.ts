@@ -1,7 +1,7 @@
-import { Locator, Page } from "@playwright/test";
+import {Locator, Page} from "@playwright/test";
+import {BasePage} from "./basePage";
 
-export class AddingContactPage {
-    readonly page: Page;
+export class AddingContactPage extends BasePage {
     readonly inputFirstName: Locator;
     readonly inputLastName: Locator;
     readonly inputBirthDate: Locator;
@@ -18,7 +18,7 @@ export class AddingContactPage {
     readonly btnLogout: Locator;
 
     constructor(page: Page) {
-        this.page = page;
+        super(page);
         this.inputFirstName = page.locator('#firstName');
         this.inputLastName = page.locator('#lastName');
         this.inputBirthDate = page.locator('#birthdate');

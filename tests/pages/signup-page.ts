@@ -1,7 +1,6 @@
-import { Locator, Page } from "@playwright/test";
+import {Locator, Page} from "@playwright/test";
 
 export class SignupPage {
-    readonly page: Page;
     readonly inputFirstName: Locator;
     readonly inputLastName: Locator;
     readonly inputEmail: Locator;
@@ -10,12 +9,35 @@ export class SignupPage {
     readonly btnCancel: Locator;
 
     constructor(page: Page) {
-        this.page = page;
         this.inputFirstName = page.locator('#firstName');
         this.inputLastName = page.locator('#lastName');
         this.inputEmail = page.locator('#email');
         this.inputPassword = page.locator('#password');
         this.btnSubmit = page.locator('#submit');
         this.btnCancel = page.locator('#cancel');
+    }
+
+    async enterFirstName(name: string): Promise<void> {
+        await this.inputFirstName.fill(name);
+    }
+
+    async enterLastName(name: string): Promise<void> {
+        await this.inputLastName.fill(name);
+    }
+
+    async enterEmail(email: string): Promise<void> {
+        await this.inputLastName.fill(email);
+    }
+
+    async enterPassword(password: string): Promise<void> {
+        await this.inputPassword.fill(password);
+    }
+
+    async submitSignUp(): Promise<void> {
+        await this.btnSubmit.click();
+    }
+
+    async cancelSignUp(): Promise<void> {
+        await this.btnCancel.click();
     }
 }
