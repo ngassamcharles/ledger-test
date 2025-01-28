@@ -17,19 +17,26 @@ export class SignupPage {
         this.btnCancel = page.locator('#cancel');
     }
 
-    async enterFirstName(name: string): Promise<void> {
+    async fillSignUpForm(firstName: string, lastName: string, email: string, password: string): Promise<void> {
+        await this.enterFirstName(firstName);
+        await this.enterLastName(lastName);
+        await this.enterEmail(email);
+        await this.enterPassword(password);
+    }
+
+    private async enterFirstName(name: string): Promise<void> {
         await this.inputFirstName.fill(name);
     }
 
-    async enterLastName(name: string): Promise<void> {
+    private async enterLastName(name: string): Promise<void> {
         await this.inputLastName.fill(name);
     }
 
-    async enterEmail(email: string): Promise<void> {
+    private async enterEmail(email: string): Promise<void> {
         await this.inputLastName.fill(email);
     }
 
-    async enterPassword(password: string): Promise<void> {
+    private async enterPassword(password: string): Promise<void> {
         await this.inputPassword.fill(password);
     }
 
