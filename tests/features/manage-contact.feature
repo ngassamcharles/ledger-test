@@ -8,6 +8,8 @@ Feature: Manage Contacts
 
   Scenario: Create a new contact
     When I create a new contact with valid data
+      | firstName | lastName | email | password |
+      |           |          |       |          |
     Then New contact should appear in the contact list
 
   Scenario: Edit an existing contact
