@@ -12,18 +12,29 @@ This project uses **Playwright-BDD** to write and execute tests following a **BD
 ## 🎯 Tag Management
 ### Add tags in your `.feature` files
 ### Commands to run scenarios with specific tags
-#### Run only scenarios with a specific tag: `npx playwright test --grep "@create"`
-#### Exclude scenarios with a specific tag: `npx playwright test --grep-invert "@regression"`
+#### Run only scenarios with a specific tag: `npx playwright test --grep "@createContact"`
+#### Exclude scenarios with a specific tag: `npx playwright test --grep-invert "@api"`
 ## 🧪 Debugging and Development
 ### Launch Playwright in interactive mode (`--debug`) `npx playwright test --debug`
 ### Display more information during execution (`--trace`) `npx playwright test --trace=on`
 ## 📊 Generating Reports
 ### Generate an HTML report after running tests: `npx playwright test --reporter=html` Then open the generated file (`playwright-report/index.html`) in your browser.
 ### Generate a JSON report: `npx playwright test --reporter=json > report.json`
-## 🔄 Additional Commands
-### Reinstall Playwright browsers: `npx playwright install`
-### Update Playwright: `npm install @playwright/test@latest playwright-bdd@latest`
-## 🌐 Additional Documentation
-- [Official Playwright Documentation](https://playwright.dev)- [Official Playwright-BDD Documentation](https://github.com/vitalets/playwright-bdd)
+
+
+## 📖 Design Choices, Tools Used, and Challenges
+
+### Design Choices:
+1. **Behavior-Driven Development (BDD)**:
+    - We chose BDD to improve collaboration between technical and non-technical stakeholders by using `.feature` files written in plain English.
+    - This approach ensures that scenarios are easy to understand and maintain.
+
+2. **Playwright-BDD**:
+    - Playwright-BDD was selected because it combines the robust browser automation capabilities of Playwright with the readability of Cucumber-like `.feature` files.
+    - It allows us to write reusable step definitions (`Given`, `When`, `Then`) for consistent and modular tests.
+
+3. **Modular Architecture**:
+    - The project is structured into `features`, `steps`, and `fixtures` directories to separate concerns and improve maintainability.
+    - Shared logic, such as API helpers, is encapsulated in utility classes for reuse across multiple tests.
 
 
