@@ -32,7 +32,6 @@ export class AddingContactPage extends BasePage {
         this.inputCountry = page.locator('#country');
         this.btnSubmit = page.locator('#submit');
         this.btnCancel = page.locator('#cancel');
-        this.btnLogout = page.locator('#logout');
 
     }
 
@@ -107,6 +106,7 @@ export class AddingContactPage extends BasePage {
 
     async submitContact(): Promise<void> {
         await this.btnSubmit.click();
+
     }
 
     async cancel(): Promise<void> {

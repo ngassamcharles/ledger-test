@@ -22,9 +22,37 @@ export class ContactPage extends BasePage {
     async verifyUserIsLoggedIn(): Promise<void> {
         await expect(this.btnAddingNewContact).toBeVisible({
             timeout: 3000
+        }).catch((error) => {
+            throw new Error(`Button adding new contact is not visible : ${error}`);
         });
+        ;
         await expect(this.contactListTable).toBeVisible({
             timeout: 3000
+        }).catch((error) => {
+            throw new Error(`Contact List is not visible : ${error}`);
+        });
+        ;
+    }
+
+    async checkIfElementIsVisibleOnTable(name: string): Promise<void> {
+        await expect(this.contactListTable
+            .locator('tr')
+            .locator('td', {hasText: name})
+            .first()
+        ).toBeVisible({
+            timeout: 2000
+        }).catch((error) => {
+            throw new Error(`Element is not visible in the list : ${error}`);
         });
     }
+
+    async selectRowName(name: string): Promise<void> {
+        await this.contactListTable
+            .locator('tr')
+            .locator('td', {hasText: name})
+            .first()
+            .click();
+    }
+
+
 }
