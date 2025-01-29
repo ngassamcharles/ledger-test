@@ -19,6 +19,11 @@ This project uses **Playwright-BDD** to write and execute tests following a **BD
 - **playwright.config.ts**: Playwright configuration file.
 
 ## 🚀 Commands to Run Tests
+### Generate tests
+```sh
+npx bddgen
+```
+
 ### Run all tests in headless mode (default)
 ```sh
 npx playwright test
@@ -51,7 +56,7 @@ npx playwright test --grep-invert "@api"
 ## 🧪 Debugging and Development
 ### Launch Playwright in interactive mode (--debug)
 ```sh
-npx playwright test --debug
+npx bddgen & npx playwright test --debug
 ```
 ### Display more information during execution (--trace)
 ```sh
@@ -64,7 +69,7 @@ npx playwright test --trace=on
 npx playwright test --reporter=html
 ```
 Then open the generated file (`playwright-report/index.html`) in your browser.
-Je veux le set
+
 ### Generate a JSON report:
 ```sh
 npx playwright test --reporter=json > report.json
