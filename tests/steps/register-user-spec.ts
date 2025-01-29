@@ -1,18 +1,12 @@
 import {Given, When, Then} from "../fixtures/fixtures";
 import {DataTable} from "playwright-bdd";
-import {HomePage} from "../pages/home-page";
-import {SignupPage} from "../pages/signup-page";
-import {ContactPage} from "../pages/contact-page";
 
 
-Given('I am on the contact list app home page', async ({page}) => {
-    const homePage = new HomePage(page);
+Given('I am on the contact list app home page', async ({homePage}) => {
     await homePage.openContactApp();
 });
 
-When('I register as a new user by signing up with these datas', async ({page}, datas: DataTable) => {
-    const homePage = new HomePage(page);
-    const signUpPage = new SignupPage(page);
+When('I register as a new user by signing up with these datas', async ({homePage, signUpPage}, datas: DataTable) => {
     await homePage.signUp();
     let firstName: string;
     let lastName: string;
@@ -33,9 +27,7 @@ When('I register as a new user by signing up with these datas', async ({page}, d
     await signUpPage.submitSignUp();
 });
 
-Then('User should be successfully registered', async ({page}, datas: DataTable) => {
-    const homePage = new HomePage(page);
-    const contactPage = new ContactPage(page);
+Then('User should be successfully registered', async ({homePage, contactPage}, datas: DataTable) => {
     let email: string;
     let password: string;
     for (const rows of datas.hashes()) {
