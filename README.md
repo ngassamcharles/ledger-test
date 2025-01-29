@@ -64,7 +64,7 @@ npx playwright test --trace=on
 npx playwright test --reporter=html
 ```
 Then open the generated file (`playwright-report/index.html`) in your browser.
-
+Je veux le set
 ### Generate a JSON report:
 ```sh
 npx playwright test --reporter=json > report.json

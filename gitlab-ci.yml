@@ -1,0 +1,12 @@
+stages:
+  - test
+
+playwright_tests:
+  stage: test
+  script:
+    - npm ci
+    - npx playwright install --with-deps
+    - npx playwright test
+  only:
+    - merge_requests
+    - main
