@@ -7,7 +7,10 @@ import {defineBddConfig} from "playwright-bdd";
  */
 const testDir = defineBddConfig({
     features: 'tests/features/*.feature',
-    steps: ['tests/steps/*-spec.ts', 'tests/fixtures/*.ts'],
+    steps: [
+        'tests/steps/*-spec.ts',
+        'tests/fixtures/*.ts'
+    ],
 });
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -26,8 +29,12 @@ export default defineConfig({
     reporter: [['html', {open: 'never'}]],
     /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
     use: {
+        baseURL: 'https://thinking-tester-contact-list.herokuapp.com/',
         trace: 'on-first-retry',
-        screenshot: "only-on-failure"
+        screenshot: "only-on-failure",
+        extraHTTPHeaders: {
+            'Accept': 'application/json'
+        }
     },
 
     /* Configure projects for major browsers */

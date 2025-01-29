@@ -5,7 +5,12 @@ import {ContactPage} from "../pages/contact-page";
 import {ContactDetailsPage} from "../pages/contact-details.page";
 import {EditContactPage} from "../pages/edit-contact.page";
 import {SignUpPage} from "../pages/sign-up-page";
+import {Helpers} from "../utils/helpers";
 
+type SharedState = {
+    token?: string;
+    contactId?: string;
+}
 
 type Fixtures = {
     homePage: HomePage;
@@ -14,6 +19,8 @@ type Fixtures = {
     contactDetailsPage: ContactDetailsPage;
     editContactPage: EditContactPage;
     signUpPage: SignUpPage;
+    helpers: Helpers;
+    sharedState: SharedState
 }
 
 export const test = base.extend<Fixtures>({
@@ -41,6 +48,14 @@ export const test = base.extend<Fixtures>({
         const signUpPage = new SignUpPage(page);
         await use(signUpPage);
     },
+    helpers: async ({}, use) => {
+        const helpers = new Helpers();
+        await use(helpers);
+    },
+    sharedState: async ({}, use) => {
+        const state: SharedState = {};
+        await use(state);
+    }
 });
 
 export const {Given, When, Then} = createBdd(test);

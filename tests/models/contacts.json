@@ -1,0 +1,13 @@
+{
+  "firstName": "Charles",
+  "lastName": "Test",
+  "birthdate": "1934-01-01",
+  "email": "sdetleadgertest@mail.com",
+  "phone": "0998763554",
+  "street1": "34 Rue",
+  "street2": "Ledger A",
+  "city": "Paris",
+  "stateProvince": "Paris",
+  "postalCode": "766746",
+  "country": "France"
+}
