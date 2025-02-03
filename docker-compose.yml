@@ -1,0 +1,12 @@
+version: '3'
+services:
+  playwright-ui:
+    build: .
+    volumes:
+      - .:/app
+    command: sh -c "npx bddgen && npx playwright test"
+  playwright-api:
+    build: .
+    volumes:
+      - .:/app
+    command: sh -c "npx bddgen && npx playwright test --grep '@api'"

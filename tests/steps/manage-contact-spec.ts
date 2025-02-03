@@ -1,6 +1,5 @@
 import {Given, When, Then} from "../fixtures/fixtures";
 import {DataTable} from "playwright-bdd";
-import {expect} from "@playwright/test";
 
 
 Given('I am logged into the contact list app', async ({homePage}, datas: DataTable) => {
