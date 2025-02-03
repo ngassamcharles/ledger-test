@@ -4,6 +4,7 @@ services:
     build: .
     volumes:
       - .:/app
+      - ./playwright-report:/app/playwright-report
     command: sh -c "npx bddgen && npx playwright test"
   playwright-api:
     build: .
